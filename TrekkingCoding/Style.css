@@ -1,0 +1,28 @@
+
+.nav-heading
+{
+font-size: 50px;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: 3A408C;
+}
+.Hilly-img{
+    background-image: url(Hillytrekking.jpg);
+    background-size: cover;
+    background-position: 0;
+    border-radius: 10px;
+}
+.Himilayan-img{
+    background-image: url(HimilayanTrekking.jpg);
+    background-size: cover;
+    border-radius: 10px;
+
+}
+.cat-font{
+    color: aliceblue;
+}
+.carousel-caption{
+    font-size: 20px;
+}
+.d-block{
+    border-radius: 20px;
+}
