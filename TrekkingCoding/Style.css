@@ -1,4 +1,9 @@
-
+.userDashboard{
+    background-image: url(Lomanthan.jpg);
+    background-repeat:no-repeat;
+    background-size:1920px;
+    background-attachment: fixed;
+}
 .nav-heading
 {
 font-size: 50px;
