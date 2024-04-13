@@ -14,7 +14,14 @@
             $emailAddress = $_POST["emailAddress"];
             $password = $_POST["password"];
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
             $errors = array();
+
+
+            if(empty($username)or empty($password)or empty($emailAddress))
+            {
+                echo("Please fill all Requirements");
+            }
             require_once "database.php";
             $sql = "SELECT * FROM user_form WHERE email = '$emailAddress'";
             $result = mysqli_query($conn, $sql);
@@ -26,13 +33,7 @@
                 foreach($errors as $error){
                     echo"<div class='error'>$error</div>";
                 }
-            }
-
-            if(empty($username)or empty($password)or empty($emailAddress))
-            {
-                echo("Please fill all Requirements");
-            }else
-            {
+            }else{
                 echo("Success Recording User");
                 require_once("database.php");
                 $sql ="INSERT INTO user_form (username, email, password) VALUES (?, ?, ?)";
