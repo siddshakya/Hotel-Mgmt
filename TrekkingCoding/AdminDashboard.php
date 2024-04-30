@@ -29,12 +29,12 @@
         <input type="text" id="ProductDetails" class="form-control mt-3 mb-3" name="username" placeholder="Product Details">
         <p>Product Price</p>
         <input type="text" id="ProductPrice" class="form-control mt-3 mb-3" name="username" placeholder="Product price">
-        <p>Product Picture</p>
         <select class="form-select" aria-label="Default select example">
         <option selected>Select Category</option>
         <option value="1">Hilly</option>
         <option value="2">Himilayan</option>
         </select>
+        <p class="mt-3">Product Picture</p>
         <input type="file" class="form-control mt-3 mb-3" name="username" placeholder="Product price">
         <a href="Dashboard.html" class="btn btn-primary mb-4">Delete</a>
 
