@@ -21,6 +21,9 @@
             }else{
                 echo "<div class='text-white bg-dark'>email or password does not match </div>";
             }
+        }elseif(isset($_POST["adminlogin"])){
+            require_once("AdminLogin.php");
+            
         }
         ?>
             <div class="text-center mt-5">
@@ -32,7 +35,7 @@
                     <div class="mt-3">                
                         <button type="submit" value ="login" name="login" class="btn btn-primary btn-block">User Login</button>
                         <a href="Register.php" class="btn btn-primary">Register</a>
-                        <button type="submit-1" class="btn btn-primary btn-block" formaction="AdminLogin.php">Admin Login</button>
+                        <button type="submit" value="adminlogin" class="btn btn-primary btn-block" formaction="AdminLogin.php">Admin Login</button>
                     </div>
                 </form>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
