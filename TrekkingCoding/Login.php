@@ -17,8 +17,8 @@
                 if(password_verify($password, $user["password"])){
                     header("Location: Dashboard.html");
                     die();
-                }
-            }else{
+            }
+            else{
                 echo "<div class='text-white bg-dark'>email or password does not match </div>";
             }
         }
