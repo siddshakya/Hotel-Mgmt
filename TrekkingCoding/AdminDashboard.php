@@ -6,19 +6,24 @@
     </head>
     <body>
       <?php
-
+    include("ProductDatabase.php");
       if(isset($_POST["submit"])){
-        $productName = $_POST["ProductName"];
-        $productDetails = $_POST["ProductDetails"];
-        $productPrice = $_POST["ProductPrice"];
-        $productImage = $_POST["ProductImage"];
+        $productName =mysqli_real_escape_string($conn, $_POST["ProductName"]);
+        $productDetails = mysqli_real_escape_string($conn, $_POST["ProductDetails"]);
+        $productPrice = mysqli_real_escape_string($conn, $_POST["ProductPrice"]);
+        $productImage = mysqli_real_escape_string($conn, $_POST["ProductImage"]);
 
         if(empty($productName)or empty($productDetails) or empty($productPrice))
         {
           echo("please complete product details");
         }else{
-          require_once("ProductDatabase.php");
-          echo("complete product");
+          $sql = "INSERT INTO products (Product_Name, Product_Details, Product_Price, Product_Image) VALUES ('$productName', '$productDetails', '$productPrice', '$productImage')"; 
+          if(mysqli_query( $conn, $sql )){
+            echo("Sucess recording product");
+          }else{
+            die("error recording");
+          }
+
         }
 
       }
@@ -53,7 +58,7 @@
   </select>
   <p class="mt-3">Product Picture</p>
   <input type="file" class="form-control mt-3 mb-3" name="ProductImage" placeholder="Product price">
-  <input type="submit" class="form-control mt-3 mb-3"value="Add Product" name="submit">            
+  <input type="submit" class="btn btn-primary form-control mt-3 mb-3"value="Add Product" name="submit">            
 
   <table class="table">
     <th>Hilly</th>
