@@ -60,28 +60,27 @@
   <input type="file" class="form-control mt-3 mb-3" name="ProductImage" placeholder="Product price">
   <input type="submit" class="btn btn-primary form-control mt-3 mb-3"value="Add Product" name="submit">            
 
-  <table class="table">
+  <table class="table-border">
     <th>Hilly</th>
     <td>
-        <div class="col"><img src="Images/Bag.png" alt="..." width="300px"> 
-              <p class="col-text">Bagpack</p>
-              <p class="col-text">Rs 4000</p>
-              <p class="col-text">Excellent Bagpack choice for hiking in Nepal.</p>
-              <a href="Dashboard.html" class="btn btn-primary">Delete</a>
-              <a href="AdminEditMenu.html" class="btn btn-primary">Edit</a>
-          </td>
-          <th>Himilayan</th>
-          <td>
-        <div class="col"><img src="Images/Bag.png" alt="..." width="300px"> 
-              <p class="col-text">Bagpack</p>
-              <p class="col-text">Rs 4000</p>
-              <p class="col-text">Excellent Bagpack choice for hiking in Nepal.</p>
-              <a href="Dashboard.html" class="btn btn-primary">Delete</a>
-              <a href="AdminEditMenu.html" class="btn btn-primary">Edit</a>
-          </td>
-    </table>
-          </div>
-    </div>
+      <?php
+      include("ProductDatabase.php");
+      $sql = "SELECT * FROM products";
+      $result = mysqli_query($conn, $sql);
+      while($row = mysqli_fetch_array($result)){
+        ?>
+        <tr>
+          <td><?php echo $row["Product_Name"];?></td>
+          <td><?php echo $row["Product_Details"];?></td>
+          <td><?php echo $row["Product_Price"];?></td>
+          <td><a href="" class="btn btn-primary">Delete</a></td>
+        </tr>
+        <?php
+      }
+      ?>
+      <th>Himilayan</th>
+          </table>
+
     </form>
    
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
