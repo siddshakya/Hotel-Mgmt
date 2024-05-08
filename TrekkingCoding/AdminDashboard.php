@@ -8,11 +8,26 @@
       <?php
     include("ProductDatabase.php");
       if(isset($_POST["submit"])){
-        $productName =mysqli_real_escape_string($conn, $_POST["ProductName"]);
+        echo"whatt?";
+        $productName = mysqli_real_escape_string($conn, $_POST["ProductName"]);
         $productDetails = mysqli_real_escape_string($conn, $_POST["ProductDetails"]);
         $productPrice = mysqli_real_escape_string($conn, $_POST["ProductPrice"]);
         $productImage = mysqli_real_escape_string($conn, $_POST["ProductImage"]);
-
+        /*
+        //adding images
+        if(!empty($_FILES["productImage"]["name"])){
+          echo"what now";
+          $productImage = basename($_FILES["image"]["name"]);
+          $imageType = pathinfo($productImage, PATHINFO_EXTENSION);
+          $allowedTypes = array("jpg", "jpeg", "png");
+          if(in_array($imageType, $allowedTypes)){
+            $image = $_FILES['image']['name'];
+            $imageContent = addslashes(file_get_contents($image));
+            $sql = "INSERT INTO products (Product_Image) VALUES ('$productImage')"; 
+        }else{
+          echo"file not uploades";
+        }     
+         */
         if(empty($productName)or empty($productDetails) or empty($productPrice))
         {
           echo("please complete product details");
@@ -25,21 +40,21 @@
           }
 
         }
-
       }
+    
+      
       if(isset($_POST["Update_Product"])){ 
         $id = mysqli_real_escape_string($conn, $_POST["id"]);
         $productName =mysqli_real_escape_string($conn, $_POST["ProductName"]);
         $productDetails = mysqli_real_escape_string($conn, $_POST["ProductDetails"]);
         $productPrice = mysqli_real_escape_string($conn, $_POST["ProductPrice"]);
-        $productImage = mysqli_real_escape_string($conn, $_POST["ProductImage"]);
-
+        $productImage = $_FILES["ProductImage"];
 
         if(empty($productName)or empty($productDetails) or empty($productPrice))
         {
           echo("please complete product details");
         }else{
-          $sql = "UPDATE products SET Product_Name = '$productName', Product_Details = '$productDetails', Product_Price = '$productPrice' WHERE proid=$id"; 
+          $sql = "UPDATE products SET Product_Name = '$productName', Product_Details = '$productDetails', Product_Price = '$productPrice', Product_Image ='$productImage' WHERE proid=$id"; 
           if(mysqli_query( $conn, $sql)){
             echo("Sucess updating product");
           }else{
@@ -64,6 +79,7 @@
             </nav>
           </div>
         </nav>
+
   <form action="AdminDashboard.php" method="post">
   <div class="container text-left">
   <p>Product name</p>
@@ -78,10 +94,10 @@
   <option value="2">Himilayan</option>
   </select>
   <p class="mt-3">Product Picture</p>
-  <input type="file" class="form-control mt-3 mb-3" name="ProductImage" placeholder="Product price">
+  <input type="file" class="form-control mt-3 mb-3" name="ProductImage" id="image">
   <input type="submit" class="btn btn-primary form-control mt-3 mb-3"value="Add Product" name="submit">            
     
-  <table class="table-border">
+  <table class="table">
     <th>Hilly</th>
     <td>
       <?php
@@ -94,8 +110,8 @@
           <td><?php echo $row["Product_Name"];?></td>
           <td><?php echo $row["Product_Details"];?></td>
           <td><?php echo $row["Product_Price"];?></td>
-          <td><a href="" class="btn btn-primary" name = "delete">Delete</a></td>
           <td><a href="ProductEdit.php?id=<?php echo $row["proid"];?>" class="btn btn-primary" name = "edit">Edit</a></td>
+          <td><a href="" class="btn btn-danger" name = "delete">Delete</a></td>
         </tr>
         <?php
       }
