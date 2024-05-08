@@ -28,11 +28,12 @@
 
       }
       if(isset($_POST["Update_Product"])){ 
+        $id = mysqli_real_escape_string($conn, $_POST["id"]);
         $productName =mysqli_real_escape_string($conn, $_POST["ProductName"]);
         $productDetails = mysqli_real_escape_string($conn, $_POST["ProductDetails"]);
         $productPrice = mysqli_real_escape_string($conn, $_POST["ProductPrice"]);
         $productImage = mysqli_real_escape_string($conn, $_POST["ProductImage"]);
-        $id = mysqli_real_escape_string($conn, $_POST["id"]);
+
 
         if(empty($productName)or empty($productDetails) or empty($productPrice))
         {

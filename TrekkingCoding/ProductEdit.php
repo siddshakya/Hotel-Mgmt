@@ -35,7 +35,7 @@
   <input type="submit" class="btn btn-danger mt-3 mb-3"value="Delete Product" name="submit">                    
   <td><a href="AdminDashboard.php" class="btn btn-primary" name = "delete">Go back</a></td>
   </div>
-  <input type="hidden" name = "id" value='<?php echo $row['id']?>'>
+  <input type="hidden" name = "id" value='<?php echo $row['proid']?>'>
     </form>
 
         <?php
