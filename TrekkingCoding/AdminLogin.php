@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $valid_password = "admin";
 
     // Retrieve form values
-    $username = $_POST['username'];
+    $username = $_POST['emailAddress'];
     $password = $_POST['password'];
 
     // Check username and password
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Authentication successful
         session_start();
         $_SESSION['logged_in'] = true;
-        header("Location:AdminDashboard.html");
+        header("Location:AdminDashboard.php");
         exit;
     } else {
         // Authentication failed
