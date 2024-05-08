@@ -23,7 +23,6 @@
             }
         }elseif(isset($_POST["adminlogin"])){
             require_once("AdminLogin.php");
-            
         }
         ?>
             <div class="text-center mt-5">
