@@ -27,11 +27,31 @@
         }
 
       }
+      if(isset($_POST["Update_Product"])){ 
+        $productName =mysqli_real_escape_string($conn, $_POST["ProductName"]);
+        $productDetails = mysqli_real_escape_string($conn, $_POST["ProductDetails"]);
+        $productPrice = mysqli_real_escape_string($conn, $_POST["ProductPrice"]);
+        $productImage = mysqli_real_escape_string($conn, $_POST["ProductImage"]);
+        $id = mysqli_real_escape_string($conn, $_POST["id"]);
+
+        if(empty($productName)or empty($productDetails) or empty($productPrice))
+        {
+          echo("please complete product details");
+        }else{
+          $sql = "UPDATE products SET Product_Name = '$productName', Product_Details = '$productDetails', Product_Price = '$productPrice' WHERE proid=$id"; 
+          if(mysqli_query( $conn, $sql)){
+            echo("Sucess updating product");
+          }else{
+            die("error recording");
+          }
+
+        }
+      }
       ?>
       <nav class="navbar bg-body-tertiary">
           <div class="container-fluid">
             <a class="navbar-Top" href="#">
-              <img src="Logoo2.png" width="100" height="100 class="d-inline-block align-text-top">
+              <img src="Logoo2.png" width="100" height="100 class="d-inline-block align-text-top>
             </a>
             <p class="nav-heading">Admin Dashboard</p>
             <nav class="navbar bg-body-tertiary">
@@ -59,7 +79,7 @@
   <p class="mt-3">Product Picture</p>
   <input type="file" class="form-control mt-3 mb-3" name="ProductImage" placeholder="Product price">
   <input type="submit" class="btn btn-primary form-control mt-3 mb-3"value="Add Product" name="submit">            
-
+    
   <table class="table-border">
     <th>Hilly</th>
     <td>
@@ -73,7 +93,8 @@
           <td><?php echo $row["Product_Name"];?></td>
           <td><?php echo $row["Product_Details"];?></td>
           <td><?php echo $row["Product_Price"];?></td>
-          <td><a href="" class="btn btn-primary">Delete</a></td>
+          <td><a href="" class="btn btn-primary" name = "delete">Delete</a></td>
+          <td><a href="ProductEdit.php?id=<?php echo $row["proid"];?>" class="btn btn-primary" name = "edit">Edit</a></td>
         </tr>
         <?php
       }
