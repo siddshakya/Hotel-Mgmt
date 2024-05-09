@@ -17,7 +17,7 @@
         $row = mysqli_fetch_array($result);
         ?>
 
-    <form action="AdminDashboard.php" method="post">
+    <form action="AdminDashboard.php" method="post" enctype="multipart/form-data">
     <p>Product name</p>
   <input type="text" id="ProductName" class="form-control mt-3 mb-3" name="ProductName" value="<?php echo $row["Product_Name"]; ?>">
   <p>Product Details</p>
@@ -30,9 +30,9 @@
   <option value="2">Himilayan</option>
   </select>
   <p class="mt-3">Product Picture</p>
-  <input type="file" class="form-control mt-3 mb-3" name="ProductImage" placeholder="Product price">
+  <input type="file" class="form-control mt-3 mb-3" name="ProductImage" value="<?php echo $row["Product_Image"]; ?>">
   <input type="submit" class="btn btn-warning mt-3 mb-3"value="Update Product" name="Update_Product">    
-  <input type="submit" class="btn btn-danger mt-3 mb-3"value="Delete Product" name="submit">                    
+  <td><a href="ProductDelete.php?id=<?php echo $row["proid"];?>" class="btn btn-danger" name = "edit">Delete</a></td>
   <td><a href="AdminDashboard.php" class="btn btn-primary" name = "delete">Go back</a></td>
   </div>
   <input type="hidden" name = "id" value='<?php echo $row['proid']?>'>
