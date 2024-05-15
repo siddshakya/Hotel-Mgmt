@@ -57,7 +57,7 @@
         }
       }
       */
-      if(isset($_POST["Update_Product"])){ 
+      if(isset($_POST["UpdateProduct"])){ 
         $id = mysqli_real_escape_string($conn, $_POST["id"]);
         $productName =mysqli_real_escape_string($conn, $_POST["ProductName"]);
         $productDetails = mysqli_real_escape_string($conn, $_POST["ProductDetails"]);
