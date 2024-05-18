@@ -42,22 +42,8 @@
          }
         }
       }
-        /*
-        if(empty($productName)or empty($productDetails) or empty($productPrice))
-        {
-          echo("please complete product details");
-        }else{
-          $sql = "INSERT INTO products (Product_Name, Product_Details, Product_Price, Product_Image) VALUES ('$productName', '$productDetails', '$productPrice','$productImage')"; 
-          if(mysqli_query( $conn, $sql )){
-            echo("Sucess recording product");
-          }else{
-            die("error recording");
-          }
-
-        }
-      }
-      */
       if(isset($_POST["UpdateProduct"])){ 
+        echo "product updated";
         $id = mysqli_real_escape_string($conn, $_POST["id"]);
         $productName =mysqli_real_escape_string($conn, $_POST["ProductName"]);
         $productDetails = mysqli_real_escape_string($conn, $_POST["ProductDetails"]);

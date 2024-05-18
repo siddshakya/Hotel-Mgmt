@@ -31,7 +31,7 @@
   </select>
   <p class="mt-3">Product Picture</p>
   <input type="file" class="form-control mt-3 mb-3" name="ProductImage" value="<?php echo $row["Product_Image"]; ?>">
-  <input type="submit" class="btn btn-warning mt-3 mb-3"value="Update Product" name="Update_Product">    
+  <input type="submit" class="btn btn-warning mt-3 mb-3"value="Update Product" name="UpdateProduct">    
   <td><a href="ProductDelete.php?id=<?php echo $row["proid"];?>" class="btn btn-danger" name = "edit">Delete</a></td>
   <td><a href="AdminDashboard.php" class="btn btn-primary" name = "delete">Go back</a></td>
   </div>
@@ -41,7 +41,6 @@
         <?php
     }
     ?>
-    
    
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>  
