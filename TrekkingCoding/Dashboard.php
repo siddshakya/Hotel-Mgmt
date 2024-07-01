@@ -15,15 +15,7 @@
                 <img src="Logoo2.png" width="100" height="100 class="d-inline-block align-text-top">
               </a>
               <p class="nav-heading">One Stop For Trekking Solution</p>
-              <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                  <form class="d-flex" role="search">
-                    <a href="Cart.html" class="btn btn-primary">Cart</a>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
+
             </div>
           </nav>
 
