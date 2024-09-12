@@ -6,23 +6,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Trekking</title>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body class="userDashboard">
-    <div class="top-nav-bar"><!--Top navigation bar-->
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-Top" href="#">
-                <img src="Logoo2.png" width="100" height="100 class="d-inline-block align-text-top">
-              </a>
-              <p class="nav-heading">One Stop For Trekking Solution</p>
 
-            </div>
-          </nav>
 
     </div>
 
     <div class="container"><!--Product items-->
-    
       <div id="carouselCaptions" class="carousel slide"><!--BLOG POSTS-->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -31,7 +22,7 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="Images/less-crowd.jpg" class="d-block w-100" alt="..." >
+            <img src="Images/less-crowd.jpg" class="da-block w-100" alt="..." >
             <div class="carousel-caption d-none d-md-block">
               <h1>Trekking in Nepal</h1>
               <p>Nepal is a tremendously varied country with a wide range of cultures, topographies, and degrees of isolation. It's common to refer to "trekking in Nepal" as a single notion, although there are actually numerous distinct trekking regions, each with unique qualities. Seven of the fourteen 8000+ peak summits tower far above the valleys and glaciers, making Nepal's whole northern border effectively the heart of the Himalayas. How can you choose your ideal journey with so many options? The style of trekking should be taken into account first. You can camp anywhere, including the Kangchenjunga region, Inner Dolpo, and the far west of Nepal. Although camping is obviously less pleasant, it may take you to some of the most secluded mountain locations.</p>
