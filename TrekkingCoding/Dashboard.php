@@ -73,8 +73,8 @@
                                 <h5 class="card-title"> <?php echo $row["Product_Name"];?></h5>
                                 <p class="card-text"><?php echo $row["Product_Details"];?></p>
                                 <p class="card-text"><?php echo $row["Product_Price"];?></p>
-                                <a href="ProductEdit.php?id=<?php echo $row["proid"];?>" class="btn btn-primary" name = "edit">Edit</a>
-                                <a href="ProductDelete.php?id=<?php echo $row["proid"];?>" class="btn btn-danger" name = "edit">Delete</a>
+                                <!--<a href="ProductEdit.php?id=<?php echo $row["proid"];?>" class="btn btn-primary" name = "edit">Edit</a>
+                                <a href="ProductDelete.php?id=<?php echo $row["proid"];?>" class="btn btn-danger" name = "edit">Delete</a>!-->
                             </div>
                             </div>          
                             <?php

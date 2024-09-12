@@ -15,7 +15,7 @@
             $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
             if($user){
                 if(password_verify($password, $user["password"])){
-                    header("Location: Dashboard.html");
+                    header("Location: Dashboard.php");
                     die();
                 }
             }else{
